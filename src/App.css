@@ -1,0 +1,43 @@
+#grocery{
+    border: 1px solid black;
+    padding: 2rem;
+    font-family: Arial, Helvetica, sans-serif;
+    box-shadow: 5px 5px 10px black;
+    background-color: rgb(239, 239, 239);
+    border-radius: 25px;
+}
+#grocery h1{
+  text-align: center;
+}
+#grocery input{
+    font-size: 1rem;
+    padding:0.5rem 1rem;
+    margin: 1rem;
+}
+#grocery #add{
+    font-size: 1rem;
+    padding:0.5rem 1rem;
+    background-color: rgb(24, 146, 228);
+    color: white;
+    border-radius: 15px;
+}
+#grocery #inner-list{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1rem;
+    font-size: 1.5rem;
+    background-color: rgb(237, 227, 164);
+    padding: 0.5rem;
+}
+#grocery #inner-list p{
+    width: 32vh;
+}
+#grocery #inner-list button{
+    font-size: 1.5rem;
+    border: none;
+    background-color: transparent;
+}
+#grocery:hover{
+  transform: scale(1.02);
+}

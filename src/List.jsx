@@ -1,23 +1,24 @@
-function List({ tasks, completedTasks, handleDelete, handleCompleted }) {
+import { useState } from "react";
+function List({ tasks, completedTasks, handleDelete, handleCompleted}) {
   return (
-    <ul>
+    <div id="list">
       {tasks.map((task, index) => {
         return (
-          <li
+          <div id="inner-list">
+           <button onClick={() => handleCompleted(task.id)}>✅</button>
+            <p
             key={index}
             style={
               completedTasks.includes(task.id)
                 ? { textDecoration: "line-through" }
                 : { textDecoration: "none" }
             }
-          >
-            {task.task}
-            <button onClick={() => handleDelete(task.id)}>Delete</button>
-            <button onClick={() => handleCompleted(task.id)}>Check</button>
-          </li>
+            >{task.task.toUpperCase()}</p>
+            <button onClick={() =>  handleDelete(task.id)}>🗑️</button>
+          </div>
         );
       })}
-    </ul>
+    </div>
   );
 }
 export default List;
