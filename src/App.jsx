@@ -13,17 +13,15 @@ function App() {
      let arr = JSON.parse(localStorage.getItem("tasks"));
      setTasks(arr);
     }
-    // if(localStorage.getItem("completed")){
-    //   let arr = JSON.parse(localStorage.getItem("completed"));
-    //   setCompletedTasks(arr);
-    //  }
   },[])
 
   
   useEffect(() => {
-    if (tasks.length > 0)
-      localStorage.setItem("tasks", JSON.stringify(tasks));
-    // localStorage.setItem("completed",JSON.stringify(completedTasks));
+  if (tasks.length >=1)
+      {localStorage.setItem("tasks", JSON.stringify(tasks));}
+  else{
+    localStorage.removeItem("tasks");
+  }
   }, [tasks]);
 
   function handleSubmit(e) {
@@ -36,11 +34,12 @@ function App() {
   }
 
   function handleDelete(idToDelete) {
-    setTasks(
+   setTasks(
       tasks.filter((task) => {
         return task.id !== idToDelete;
       })
-    );
+    )
+   
   }
 
 
@@ -60,7 +59,7 @@ function App() {
           onChange={(e) => setInputValue(e.target.value)}
         />
         <button type="submit">
-          Add Task
+          Add Item
         </button>
       </form>
 
